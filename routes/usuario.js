@@ -122,13 +122,13 @@ ModeloUsuario.find({ email: post.email })
         })
     }else{
         res.json({
-            mensaje:'Contraseña equivocada'
+            mensaje:'Las Credenciales de usuario fallaron'
         })
     }
 
   }else{
     res.json({
-      mensaje:'Error de credenciales'
+      mensaje:'Las Credenciales de usuario fallaron'
   })
   } 
 })
