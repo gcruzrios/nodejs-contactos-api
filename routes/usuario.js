@@ -112,12 +112,13 @@ ModeloUsuario.find({ email: post.email })
 
       const match =  await bcrypt.compare(post.password, models[0].password);
       if(match){
-        const token= jwt.sign({id:models[0]._id,nombre:models[0].nombre},'secreto')
+        const token= jwt.sign({id:models[0]._id,nombre:models[0].nombre,role:models[0].role},'secreto')
 
         res.json ({
             mensaje:"Bienvenido",
             nombre:models[0].nombre,
             id:models[0]._id,
+            role:models[0].role,
             token
         })
     }else{
